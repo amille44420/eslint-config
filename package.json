@@ -1,0 +1,58 @@
+{
+  "name": "@amille/eslint-config",
+  "version": "0.0.0-development",
+  "description": "",
+  "repository": "github:amille44420/eslint-config",
+  "bugs": "https://github.com/amille44420/eslint-config/issues",
+  "homepage": "https://github.com/amille44420/eslint-config",
+  "keywords": [
+    "eslint",
+    "prettier",
+    "config",
+    "amille"
+  ],
+  "license": "MIT",
+  "author": "Adrien Mille <adrien.mille.aer@gmail.com>",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "react.js",
+    "prettier.js"
+  ],
+  "dependencies": {
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react-hooks": "^2.3.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "@semantic-release/changelog": "^3.0.6",
+    "@semantic-release/github": "^6.0.1",
+    "@semantic-release/git": "^7.1.0-beta.11",
+    "commitlint-circle": "^1.0.0",
+    "eslint": "^6.8.0",
+    "prettier": "^1.19.1",
+    "semantic-release": "^16.0.1",
+    "semantic-release-cli": "^5.2.3"
+  },
+  "peerDependencies": {
+    "eslint": "^6.8.0",
+    "prettier": "^1.19.1"
+  },
+  "scripts": {
+    "lint": "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" .",
+    "lint:fix": "npm run lint --fix",
+    "lint:commit": "commitlint",
+    "lint:commit:ci": "commitlint-circle",
+    "publish": "semantic-release"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
