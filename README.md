@@ -33,6 +33,29 @@ Then creat a file named `.prettierrc.json` along side the previous file, with th
 "@amille/eslint-config"
 ```
 
+## Variants
+
+This package comes with two configurations
+
+#### Default
+
+The default configuration is based on `airbnb-base` and `prettier`.
+
+```json
+{
+    "extends": ["@amille/eslint-config"]
+}
+```
+
+#### React
+
+The react configuration is based on `airbnb`, `prettier` and `prettier/react`.
+
+```json
+{
+    "extends": ["@amille/eslint-config/react"]
+}
+```
 
 [eslint]: https://www.npmjs.com/package/eslint
 [prettier]: https://www.npmjs.com/package/prettier
