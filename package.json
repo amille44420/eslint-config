@@ -47,7 +47,7 @@
   },
   "scripts": {
     "lint": "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" .",
-    "lint:fix": "npm run lint --fix",
+    "lint:fix": "npm run lint -- --fix",
     "lint:commit": "commitlint",
     "lint:commit:ci": "commitlint-circle",
     "publish": "semantic-release"
