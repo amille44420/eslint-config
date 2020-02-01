@@ -1,5 +1,9 @@
 # @amille/eslint-config
 
+![npm](https://img.shields.io/npm/v/@amille/eslint-config)
+![CircleCI](https://img.shields.io/circleci/build/github/amille44420/eslint-config)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+
 Eslint and prettier configuration (inspired by [@thetribe/eslint-config][thetribe-eslint-config])
 
 [thetribe-eslint-config]: https://www.npmjs.com/package/@thetribe/eslint-config
