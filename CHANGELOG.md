@@ -1,3 +1,5 @@
+## [1.2.7](https://github.com/amille44420/eslint-config/compare/v1.2.6...v1.2.7) (2020-03-16)
+
 ## [1.2.6](https://github.com/amille44420/eslint-config/compare/v1.2.5...v1.2.6) (2020-03-09)
 
 ## [1.2.5](https://github.com/amille44420/eslint-config/compare/v1.2.4...v1.2.5) (2020-03-02)
