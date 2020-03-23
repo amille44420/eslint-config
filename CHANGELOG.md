@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/amille44420/eslint-config/compare/v1.2.9...v1.3.0) (2020-03-23)
+
+
+### Features
+
+* **prettier:** update prettier settings ([793d9e9](https://github.com/amille44420/eslint-config/commit/793d9e93211db29c57b37e5f6befea2e7537d7c8))
+
 ## [1.2.9](https://github.com/amille44420/eslint-config/compare/v1.2.8...v1.2.9) (2020-03-23)
 
 ## [1.2.8](https://github.com/amille44420/eslint-config/compare/v1.2.7...v1.2.8) (2020-03-20)
