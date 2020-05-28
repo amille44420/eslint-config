@@ -1,7 +1,7 @@
 const { rules } = require('./index');
 
 module.exports = {
-    plugins: ['prettier'],
+    plugins: ['prettier', 'react-hooks'],
     extends: ['airbnb', 'prettier', 'prettier/react'],
     rules: {
         ...rules,
@@ -30,5 +30,6 @@ module.exports = {
         ],
         'react/require-default-props': 'off',
         'react/sort-prop-types': 'error',
+        'react-hooks/exhaustive-deps': 'warn',
     },
 };
