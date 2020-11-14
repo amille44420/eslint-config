@@ -1,23 +1,27 @@
 version: 2.1
 
+executors:
+  node-step:
+    docker:
+      - image: circleci/node:14.4.0
+
 jobs:
   deps-install:
-    docker:
-      - image:  circleci/node:12.14.1
+    executor: node-step
     steps:
       - checkout
       - restore_cache:
           keys:
-            - yarn-install-node12-{{ checksum "package.json" }}-{{ checksum "yarn.lock" }}
-            - yarn-install-node12-{{ checksum "package.json" }}
-            - yarn-install-node12
+            - yarn-install-node14-{{ checksum "package.json" }}-{{ checksum "yarn.lock" }}
+            - yarn-install-node14-{{ checksum "package.json" }}
+            - yarn-install-node14
           paths:
             - node_modules
             - ~/.cache/yarn
       - run:
           command: yarn install --frozen-lockfile
       - save_cache:
-          key: yarn-install-node12-{{ checksum "package.json" }}-{{ checksum "yarn.lock" }}
+          key: yarn-install-node14-{{ checksum "package.json" }}-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
             - ~/.cache/yarn
@@ -27,8 +31,7 @@ jobs:
             - node_modules
 
   code-lint:
-    docker:
-      - image: circleci/node:12.14.1
+    executor: node-step
     steps:
       - checkout
       - attach_workspace:
@@ -36,8 +39,7 @@ jobs:
       - run: yarn lint
 
   commit-lint:
-    docker:
-      - image: circleci/node:12.14.1
+    executor: node-step
     steps:
       - checkout
       - attach_workspace:
@@ -45,8 +47,7 @@ jobs:
       - run: yarn lint:commit:ci
 
   publish:
-    docker:
-      - image: circleci/node:12.14.1
+    executor: node-step
     steps:
       - checkout
       - attach_workspace:
