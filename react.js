@@ -2,7 +2,7 @@ const { rules } = require('./index');
 
 module.exports = {
     plugins: ['prettier', 'react-hooks'],
-    extends: ['airbnb', 'prettier', 'prettier/react'],
+    extends: ['airbnb', 'prettier'],
     rules: {
         ...rules,
         'jsx-a11y/anchor-is-valid': [
