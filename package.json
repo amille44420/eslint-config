@@ -30,7 +30,7 @@
     "eslint-plugin-react-hooks": "^4.0.4"
   },
   "devDependencies": {
-    "@commitlint/cli": "^12.1.1",
+    "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^12.1.1",
     "commitlint-circle": "^1.0.0",
     "eslint": "^7.1.0",
