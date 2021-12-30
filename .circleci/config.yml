@@ -3,7 +3,7 @@ version: 2.1
 executors:
   node-step:
     docker:
-      - image: circleci/node:14.4.0
+      - image: circleci/node:16.13.1
 
 jobs:
   deps-install:
@@ -12,16 +12,16 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - yarn-install-node14-{{ checksum "package.json" }}-{{ checksum "yarn.lock" }}
-            - yarn-install-node14-{{ checksum "package.json" }}
-            - yarn-install-node14
+            - yarn-install-node16-{{ checksum "package.json" }}-{{ checksum "yarn.lock" }}
+            - yarn-install-node16-{{ checksum "package.json" }}
+            - yarn-install-node16
           paths:
             - node_modules
             - ~/.cache/yarn
       - run:
           command: yarn install --frozen-lockfile
       - save_cache:
-          key: yarn-install-node14-{{ checksum "package.json" }}-{{ checksum "yarn.lock" }}
+          key: yarn-install-node16-{{ checksum "package.json" }}-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
             - ~/.cache/yarn
@@ -46,6 +46,18 @@ jobs:
           at: ~/project
       - run: yarn lint:commit:ci
 
+  build:
+    executor: node-step
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/project
+      - run: yarn build
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - build
+
   publish:
     executor: node-step
     steps:
@@ -59,9 +71,13 @@ workflows:
   build:
     jobs:
       - deps-install
+      - build:
+          requires:
+            - deps-install
       - code-lint:
           requires:
             - deps-install
+            - build
       - commit-lint:
           requires:
             - deps-install
@@ -74,3 +90,4 @@ workflows:
           requires:
             - code-lint
             - commit-lint
+            - build

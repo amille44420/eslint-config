@@ -1,7 +1,2 @@
-module.exports = {
-    trailingComma: 'es5',
-    printWidth: 120,
-    tabWidth: 4,
-    singleQuote: true,
-    arrowParens: 'avoid',
-};
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+module.exports = require('./build/prettier').default;
