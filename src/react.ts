@@ -19,6 +19,7 @@ const config: Linter.Config = {
             'error',
             {
                 namedComponents: 'arrow-function',
+                unnamedComponents: 'arrow-function',
             },
         ],
         'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
