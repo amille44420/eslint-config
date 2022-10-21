@@ -3,7 +3,7 @@ version: 2.1
 executors:
   node-step:
     docker:
-      - image: cimg/node:18.3.0
+      - image: cimg/node:18.10.0
 
 jobs:
   deps-install:
@@ -12,23 +12,21 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - yarn-install-node18-{{ checksum "package.json" }}-{{ checksum "yarn.lock" }}
-            - yarn-install-node18-{{ checksum "package.json" }}
-            - yarn-install-node18
+            - yarn3-node18-{{ checksum "yarn.lock" }}
+            - yarn3-node18
           paths:
-            - node_modules
-            - ~/.cache/yarn
+            - ~/yarn/cache
       - run:
-          command: yarn install --frozen-lockfile
+          command: yarn install --immutable
       - save_cache:
-          key: yarn-install-node18-{{ checksum "package.json" }}-{{ checksum "yarn.lock" }}
+          key: yarn3-node18-{ checksum "yarn.lock" }}
           paths:
-            - node_modules
-            - ~/.cache/yarn
+            - ~/yarn/cache
       - persist_to_workspace:
           root: ~/project
           paths:
             - node_modules
+            - ~/yarn/cache
 
   code-lint:
     executor: node-step
