@@ -35,7 +35,7 @@
     "@types/eslint": "^8.4.7",
     "@types/node": "^18.11.3",
     "@types/prettier": "^2.7.1",
-    "@typescript-eslint/eslint-plugin": "^5.40.1",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^5.40.1",
     "commitlint-circle": "^1.0.0",
     "eslint": "^8.25.0",
